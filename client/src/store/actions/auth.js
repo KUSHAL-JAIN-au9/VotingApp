@@ -24,6 +24,7 @@ export const authUser = (path, data) => {
   return async dispatch => {
     try {
       const { token, ...user } = await API.call('post', `auth/${path}`, data);
+      console.log(user);
       localStorage.setItem('jwtToken', token);
       API.setToken(token);
       dispatch(setCurrentUser(user));

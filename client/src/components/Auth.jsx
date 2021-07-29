@@ -46,7 +46,7 @@ class Auth extends Component {
             autoComplete="off"
             className="form-input"
           />
-          <label className="form-label" for="password">
+          <label className="form-label" htmlFor="password">
             password{' '}
           </label>
           <input

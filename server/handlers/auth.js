@@ -107,7 +107,8 @@ exports.login = async (req, res, next) => {
     const jwtToken = jwtGenerator(user.rows[0].user_id);
     console.log(jwtToken);
     return res.json({
-      jwtToken });
+      username,
+      token:jwtToken });
   } catch (err) {
     return next({ status: 400, message: 'Invalid Username/Password' });
   }

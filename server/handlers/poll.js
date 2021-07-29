@@ -1,5 +1,4 @@
 const db = require('../models');
-const pool = require("../db");
 
 exports.showPolls = async (req, res, next) => {
   try {
@@ -33,11 +32,7 @@ exports.createPoll = async (req, res, next) => {
   const { id } = req.decoded;
   const { question, options } = req.body;
   try {
-    const user = await pool.query("SELECT * FROM Candidates WHERE user_id = $1", [
-      id
-    ]);
-
-    console.log(user)
+    const user = await db.User.findById(id);
     const poll = await db.Poll.create({
       question,
       user,

@@ -10,7 +10,7 @@ const Navbar = ({ auth, logout }) => (
       <ul className="navbar-container">
         <li>
           <Link className="navbar-brand" to="/">
-            Poll app
+            Vote app
           </Link>
         </li>
         {!auth.isAuthenticated && (

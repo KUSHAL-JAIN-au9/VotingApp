@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const handle = require('../handlers');
-const auth = require('../middleware/auth');
+const auth = require('../middleware/authorize');
 
 router
   .route('/')
   .get(handle.showPolls)
-  .post(auth, handle.createPoll);
+  .post(handle.createPoll);
 
 router.get('/user', auth, handle.usersPolls);
 
